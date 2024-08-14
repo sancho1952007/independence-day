@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;1,400&display=swap');
+
+body {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: rgb(203, 203, 255);
+}
+
+.container {
+    width: calc(100% - 20px);
+    margin-left: 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.container-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container-bottom {
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.flag {
+    margin-top: 20px;
+}
+
+.flag>* {
+    width: 50vw;
+    aspect-ratio: 4 / 1;
+    max-width: 500px;
+    border: 1px solid;
+}
+
+.flag #top {
+    background-color: #f15b26;
+}
+
+.flag #center {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flag #bottom {
+    background-color: #016934;
+}
+
+.chakra {
+    height: calc(100% - 10px);
+    aspect-ratio: 1 / 1;
+    border: 0.7vw solid #2c2c6d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 50%;
+}
+
+.chakra>* {
+    width: 100%;
+    height: 2px;
+    background-color: #2d2c6e;
+    position: relative;
+}
+
+#l1 {
+    top: 11px;
+}
+
+#l2 {
+    rotate: 90deg;
+    top: 9px;
+}
+
+#l3 {
+    rotate: 15deg;
+    top: 7px;
+}
+
+#l4 {
+    rotate: 30deg;
+    top: 5px;
+}
+
+#l5 {
+    rotate: 45deg;
+    top: 2.5px;
+}
+
+#l6 {
+    rotate: 60deg;
+    top: .5px;
+}
+
+#l7 {
+    rotate: 75deg;
+    top: -1px;
+}
+
+#l8 {
+    rotate: 105deg;
+    top: -3px;
+
+}
+
+#l9 {
+    rotate: 120deg;
+    top: -5px;
+
+}
+
+#l10 {
+    rotate: 135deg;
+    top: -6.75px;
+}
+
+#l11 {
+    rotate: 150deg;
+    top: -8.5px;
+}
+
+#l12 {
+    rotate: 165deg;
+    top: -10.5px;
+}
+
+.random-fact {
+    font-size: 20px;
+    margin-top: 40px;
+    text-align: center;
+    text-wrap: balance;
+}
+
+.period {
+    text-align: center;
+    text-wrap: balance;
+    font-size: 20px;
+}
+
+.small-text {
+    text-align: center;
+    text-wrap: balance;
+    margin-top: 5px;
+    font-size: 13px;
+}
+
+a {
+    all: unset;
+    cursor: pointer;
+    color: blue;
+}
+
+@media screen and (max-height:700px) {
+    .container {
+        justify-content: unset;
+    }
+
+    .container-bottom {
+        margin-top: 50px;
+    }
+}
+
+* {
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    font-family: 'Barlow', sans-serif;
+}

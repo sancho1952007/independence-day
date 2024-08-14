@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <title>Happy Independence Day 🇮🇳</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🇮🇳</text></svg>">
+    <link rel="stylesheet" href="./style.css">
+    <!-- <script src="https://livejs.com/live.js"></script> -->
+</head>
+
+<body>
+    <div class="container">
+        <div class="container-top">
+            <div class="flag">
+                <div id="top"></div>
+                <div id="center">
+
+                    <div class="chakra">
+                        <div id="l1"></div>
+                        <div id="l2"></div>
+                        <div id="l3"></div>
+                        <div id="l4"></div>
+                        <div id="l5"></div>
+                        <div id="l6"></div>
+                        <div id="l7"></div>
+                        <div id="l8"></div>
+                        <div id="l9"></div>
+                        <div id="l10"></div>
+                        <div id="l11"></div>
+                        <div id="l12"></div>
+                    </div>
+
+                </div>
+                <div id="bottom"></div>
+            </div>
+
+            <h1>Happy Independence Day!</h1>
+            <div class="period"><b>We Have Been Independent For<br></b><i id="time"></i></div>
+            <div class="random-fact"><b>Random Fact About India</b><br>&nbsp;<i id="fact"></i></div>
+        </div>
+
+        <div class="container-bottom">
+            <div class="small-text">No Images Are Used In This Webpage (including the flag). It Is Completely Made Using
+                <a href="https://en.wikipedia.org/wiki/CSS" target="_blank">CSS</a>
+            </div>
+            <div class="small-text">Made with ❤️ by <a href="https://sancho1952007.github.io/" target="_blank">Sancho
+                    Godinho</a></div>
+        </div>
+    </div>
+</body>
+
+<script>
+    const facts = [
+        "India is the seventh-largest country in the world by land area.",
+        "India is the second-most populous country, with over 1.4 billion people.",
+        "India has the world's largest democracy.",
+        "Hindi and English are the official languages of India.",
+        "The Indian Rupee is the currency of India.",
+        "India is known as the birthplace of major religions like Hinduism, Buddhism, Jainism, and Sikhism.",
+        "The Taj Mahal, located in Agra, is one of the Seven Wonders of the World.",
+        "India has the world's third-largest road network.",
+        "The Indian Railways is the fourth-largest railway network in the world.",
+        "India is the world's largest producer of milk.",
+        "India is the world's second-largest producer of tea.",
+        "India is home to the world's largest postal network.",
+        "India is the largest producer of spices in the world.",
+        "India has the second-largest standing army in the world.",
+        "India is the world's largest producer of mangoes.",
+        "The Kumbh Mela festival in India is the largest gathering of people in the world.",
+        "India has the highest cricket ground in the world at Chail, Himachal Pradesh.",
+        "India is home to the world's only floating post office in Dal Lake, Srinagar.",
+        "The Indian film industry, known as Bollywood, produces the most films in the world.",
+        "India has the largest number of vegetarians in the world.",
+        "India is the largest producer of jute in the world.",
+        "India was the first country to mine diamonds.",
+        "India is the second-largest producer of cotton in the world.",
+        "The game of chess originated in India.",
+        "India is home to the world's highest motorable road at Khardung La in Ladakh.",
+        "The world's first university, Nalanda University, was established in India.",
+        "India is the only country with a national symbol that is a mathematical concept: the zero.",
+        "India has the largest number of mosques, with over 300,000.",
+        "The Indian Space Research Organisation (ISRO) is one of the world's leading space agencies.",
+        "The Banyan tree is India's national tree.",
+        "The Peacock is India's national bird.",
+        "The Bengal Tiger is India's national animal.",
+        "India's national sport is field hockey.",
+        "The Indian constitution is the longest written constitution of any country.",
+        "India has 29 states and 8 Union territories.",
+        "India's Andaman and Nicobar Islands have the only active volcano in South Asia.",
+        "The Lotus Temple in Delhi is one of the most visited buildings in the world.",
+        "India has the largest number of tigers in the wild.",
+        "The state of Meghalaya in India is the wettest place on Earth.",
+        "The world's tallest statue, the Statue of Unity, is in India.",
+        "India is the world's second-largest producer of wheat.",
+        "India has the world's second-largest road network.",
+        "The Indian Ocean is named after India.",
+        "India was the first country to introduce the concept of shampoo.",
+        "The largest producer of bananas in the world is India.",
+        "India has the largest film studio in the world, Ramoji Film City.",
+        "The Indian flag was designed by Pingali Venkayya.",
+        "India is one of the few countries to have a successful Mars mission, Mangalyaan.",
+        "The city of Varanasi is one of the oldest continuously inhabited cities in the world."
+    ];
+
+    document.querySelector('body').style.height = window.innerHeight + 'px';
+    window.onresize = () => {
+        document.querySelector('body').style.height = window.innerHeight + 'px';
+    }
+
+    function calculateExactTimeDifference(startDate, endDate) {
+        let years = endDate.getFullYear() - startDate.getFullYear();
+        let months = endDate.getMonth() - startDate.getMonth();
+        let days = endDate.getDate() - startDate.getDate();
+        let hours = endDate.getHours() - startDate.getHours();
+        let minutes = endDate.getMinutes() - startDate.getMinutes();
+        let seconds = endDate.getSeconds() - startDate.getSeconds();
+
+        if (seconds < 0) {
+            seconds += 60;
+            minutes -= 1;
+        }
+
+        if (minutes < 0) {
+            minutes += 60;
+            hours -= 1;
+        }
+
+        if (hours < 0) {
+            hours += 24;
+            days -= 1;
+        }
+
+        if (days < 0) {
+            const previousMonth = new Date(endDate.getFullYear(), endDate.getMonth(), 0).getDate();
+            days += previousMonth;
+            months -= 1;
+        }
+
+        if (months < 0) {
+            months += 12;
+            years -= 1;
+        }
+
+        return { years, months, days, hours, minutes, seconds };
+    }
+
+    const startDate = new Date('1947-08-14T17:30:00.000Z');
+    const endDate = new Date();
+    const timeDifference = calculateExactTimeDifference(startDate, endDate);
+    document.querySelector('#time').innerText = `${timeDifference.years} Years, ${timeDifference.months} Months, ${timeDifference.days} Days, ${timeDifference.hours} Hours, ${timeDifference.minutes} Minutes, ${timeDifference.seconds} Seconds`;
+
+    setInterval(() => {
+        const endDate = new Date();
+        const timeDifference = calculateExactTimeDifference(startDate, endDate);
+        document.querySelector('#time').innerText = `${timeDifference.years} Years, ${timeDifference.months} Months, ${timeDifference.days} Days, ${timeDifference.hours} Hours, ${timeDifference.minutes} Minutes, ${timeDifference.seconds} Seconds`;
+    }, 500);
+
+    document.querySelector('#fact').innerText = facts[Math.floor(Math.random() * facts.length)];
+</script>
+
+</html>
